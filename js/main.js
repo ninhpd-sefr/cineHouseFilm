@@ -284,3 +284,21 @@ listFilm.map(item => {
 // get type "itemFilm.movie.type"  get country "itemFilm.movie.country[0].name"
 //get genres "itemFilm.movie.category[0].name"
 
+
+
+const handleSearch = () =>{
+  const inputSearch = document.querySelector(".inputSearch").value
+  let titleFilm = []
+  listFilm.map(item =>{
+    fetch(`https://ophim1.com/phim/${item}`)
+      .then(res => res.json())
+      .then(itemSearch =>{
+        titleFilm.push(itemSearch.movie.name)
+        
+        
+      })
+  })
+
+ console.log(titleFilm);
+  
+}
