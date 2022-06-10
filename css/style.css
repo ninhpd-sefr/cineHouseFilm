@@ -393,6 +393,30 @@ z-index: 1;
     color: white;
 }
 
+/*Search */
+#result-search{
+    background-color: #26262d;
+    display: none;
+}
+.result-search-title{
+    font-size: 30px;
+    padding: 20px;
+    color: #ff501a;
+}
+.result-search-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px 40px;
+    margin: 0;
+}
+
+.result-search-item{
+    width: 20%;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+
 .content-list{
 
 }

@@ -285,20 +285,79 @@ listFilm.map(item => {
 //get genres "itemFilm.movie.category[0].name"
 
 
+let titleFilm = []
+let resultSearch = [];
+function handleSearch() {
 
-const handleSearch = () =>{
-  const inputSearch = document.querySelector(".inputSearch").value
-  let titleFilm = []
-  listFilm.map(item =>{
-    fetch(`https://ophim1.com/phim/${item}`)
-      .then(res => res.json())
-      .then(itemSearch =>{
-        titleFilm.push(itemSearch.movie.name)
-        
-        
-      })
+  return new Promise(resultPromise => {
+    listFilm.map(item => {
+      fetch(`https://ophim1.com/phim/${item}`)
+        .then(res => res.json())
+        .then(itemSearch => {
+          titleFilm.push(itemSearch.movie.name)
+        })
+    })
+    resultPromise(titleFilm)
   })
-
- console.log(titleFilm);
-  
 }
+
+handleSearch();
+
+async function handleSearchMain() {
+  let inputSearch = document.querySelector(".inputSearch").value;
+  document.querySelector("#content").style.display = "none"
+  document.querySelector("#result-search").style.display = "block"
+  let resultSearchMain = await handleSearch();
+  resultSearch = filterItems(resultSearchMain, inputSearch)
+
+
+  function filterItems(arr, query) {
+    return arr.filter(function (el) {
+      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    })
+  }
+
+  handleRenderSearch(resultSearch);
+
+  function handleRenderSearch(resultSearch) {
+    let resultRernderSearch = ""
+    resultSearch.map(itemSearch => {
+      listFilm.map(item => {
+        fetch(`https://ophim1.com/phim/${item}`)
+          .then(res => res.json())
+          .then(itemFilm => {
+            if (itemFilm.movie.name == itemSearch) {
+              resultRernderSearch += `
+              <li class="content-item-film result-search-item">
+              <div class="content-item-img">
+                  <img src=${itemFilm.movie.thumb_url} alt="">
+                  <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+              </div>
+              <div class="content-item-info">
+                  <div class="content-item-info-main">
+                      <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                      <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
+                      <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
+                  </div>
+
+                  <div class="content-item-info-sub">
+                      <div class="content-info-age">PG-13</div>
+                  </div>
+              </div>
+          </li>
+              `
+      document.querySelector(".result-search-list").innerHTML = resultRernderSearch;
+            }
+          })
+      })
+
+    }
+    )
+
+
+  }
+
+}
+
+
+
