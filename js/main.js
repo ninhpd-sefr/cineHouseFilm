@@ -80,11 +80,11 @@ listFilm.map(item => {
                    <li class="content-item-film">
                         <div class="content-item-img">
                             <img src=${itemFilm.movie.thumb_url} alt="">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
                         </div>
                         <div class="content-item-info">
                             <div class="content-item-info-main">
-                                <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                                <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
                                 <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
                                 <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
                             </div>
@@ -107,11 +107,11 @@ listFilm.map(item => {
                    <li class="content-item-film">
                         <div class="content-item-img">
                             <img src=${itemFilm.movie.thumb_url} alt="">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
                         </div>
                         <div class="content-item-info">
                             <div class="content-item-info-main">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
                                 <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
                                 <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
                             </div>
@@ -134,11 +134,11 @@ listFilm.map(item => {
                    <li class="content-item-film">
                         <div class="content-item-img">
                             <img src=${itemFilm.movie.thumb_url} alt="">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
                         </div>
                         <div class="content-item-info">
                             <div class="content-item-info-main">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
                                 <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
                                 <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
                             </div>
@@ -161,11 +161,11 @@ listFilm.map(item => {
                    <li class="content-item-film">
                         <div class="content-item-img">
                             <img src=${itemFilm.movie.thumb_url} alt="">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
                         </div>
                         <div class="content-item-info">
                             <div class="content-item-info-main">
-                            <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
                                 <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
                                 <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
                             </div>
@@ -201,7 +201,7 @@ sigFilmRender.map(item => {
       if (countSing < 12) {
         resultSing += `
             <li>
-            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-main-left-item">
+            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-main-left-item">
                 <div class="content-main-item-img">
                     <img src="${itemFilm.movie.thumb_url}" alt="">
                 </div>
@@ -230,7 +230,7 @@ serFilmRender.map(item => {
       if (countSer < 12) {
         resultSer += `
             <li>
-            <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-main-left-item">
+            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-main-left-item">
                 <div class="content-main-item-img">
                     <img src="${itemFilm.movie.thumb_url}" alt="">
                 </div>
@@ -257,7 +257,7 @@ listFilm.map(item => {
       if (countRank < 7) {
         resultRank += `
             <li>
-            <a href="${itemFilm.episodes[0].server_data[0].link_embed}">
+            <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}">
             <img src="${itemFilm.movie.thumb_url}" alt="">
             <div class="content-main-right-about">
                 <h3>${itemFilm.movie.name}</h3>
@@ -331,11 +331,11 @@ async function handleSearchMain() {
               <li class="content-item-film result-search-item">
               <div class="content-item-img">
                   <img src=${itemFilm.movie.thumb_url} alt="">
-                  <a href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
+                  <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}" class="content-item-play"><i class="fa-solid fa-play play-item"></i></a>
               </div>
               <div class="content-item-info">
                   <div class="content-item-info-main">
-                      <a href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
+                      <a target="_blank" href="${itemFilm.episodes[0].server_data[0].link_embed}"><span class="content-info-name">${itemFilm.movie.name}</span></a>
                       <p class="content-info-about">${itemFilm.movie.country[0].name}</p>
                       <p class="content-info-genres">${itemFilm.movie.category[0].name}</p>
                   </div>
